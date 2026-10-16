@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Student Management System</h1>
+            <p>Manage your student records easily</p>
+        </header>
+
+        <section class="form-section">
+            <h2 id="formTitle">Add New Student</h2>
+
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+
+                <label for="name">Student Name</label>
+                <input type="text" id="name" placeholder="Enter student name" required>
+
+                <label for="rollNo">Roll Number</label>
+                <input type="text" id="rollNo" placeholder="Enter roll number" required>
+
+                <label for="course">Course</label>
+                <input type="text" id="course" placeholder="Enter course name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter email address" required>
+
+                <button type="submit" id="submitBtn">Add Student</button>
+                <button type="button" id="cancelBtn" class="cancel-btn" hidden>
+                    Cancel Edit
+                </button>
+            </form>
+
+            <p id="message"></p>
+        </section>
+
+        <section class="list-section">
+            <div class="list-heading">
+                <h2>Student Records</h2>
+                <span>Total Students: <strong id="studentCount">0</strong></span>
+            </div>
+
+            <input type="search" id="searchInput"
+                placeholder="Search by name, roll number, course or email">
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable">
+                        <tr>
+                            <td colspan="5">Loading students...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
